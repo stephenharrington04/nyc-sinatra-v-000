@@ -4,19 +4,19 @@ class LandmarksController < ApplicationController
     erb :'/landmarks/index'
   end
 
-  get '/figures/new' do
-    erb :'/figures/new'
+  get '/landmarks/new' do
+    erb :'/landmarks/new'
   end
 
-  get '/figures/:id' do
-    @figure = Figure.find(params[:id])
+  get '/landmarks/:id' do
+    @landmark = Landmark.find(params[:id])
 
-    erb :'/figures/show'
+    erb :'/landmarks/show'
   end
 
-  get '/figures/:id/edit' do
-    @figure = Figure.find(params[:id])
+  get '/landmarks/:id/edit' do
+    @landmark = Landmark.find(params[:id])
 
-    erb :'/figures/edit'
+    erb :'/landmarks/edit'
   end
 end
