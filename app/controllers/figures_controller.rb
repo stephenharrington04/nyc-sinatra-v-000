@@ -34,4 +34,10 @@ class FiguresController < ApplicationController
     erb :'/figures/edit'
   end
 
+  patch '/figures' do
+    @figure.update(params[:figure])
+
+    redirect "/figures/#{@figure.id}"
+  end
+
 end
