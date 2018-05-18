@@ -1,0 +1,13 @@
+<form action="/figures" method="POST">
+  <label>Name: </label>
+  <input type="text" name="figures[name]" value="<%= @figure.name %>" id="figure_name"><br>
+
+  <label>Title: </label>
+  <% Title.all.each do |title| %>
+    <%= title.name %>
+    <input type="checkbox" name="figures[title]" value="<%= @figure.title.id %>" id="<%= @figure.title.id %>"
+    <%= 'checked' if @figure.titles.include?(title) %>>
+  <% end %>
+
+
+</form>
